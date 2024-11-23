@@ -11,33 +11,30 @@ namespace DreamShot.NavigationTests
 {
     public class BasePageTests : TestSetup
     {
-        [Test, Order(1)]
+        [Test, Order(5)]
         public void BasePage_NavBarElementsArePresent()
         {
-            basePage.NavigateTo();
             Assert.True(basePage.AreElementsPresent(), "Navigation Bar buttons are not present on the page");
         }
 
-        [Test, Order(2)]
+        [Test, Order(6)]
         public void BasePage_ImagesGetsBlurry_AfterGetTheAppIsClicked()
         {
-            basePage.NavigateTo();
-
             basePage.GetTheAppButton.Click();
 
             Assert.IsTrue(basePage.blurredElement.Displayed, "The overlay did not become visible after the blur effect was triggered.");
         }
 
-        [Test, Order(22)]
+        [Test, Order(7)]
         public void BasePage_3dAnimationIsDisplayed()
         {
             driver.Navigate().GoToUrl("https://mind-wend-913065.framer.app/");
 
-            Assert.True(basePage.BackgroundImage.Displayed);
+            Assert.True(basePage.BackgroundImage.Displayed, "Background image is not displayed");
 
             actions.MoveByOffset(960, 540).Perform();
 
-            Assert.True(basePage.Open3dImageButton.Displayed);
+            Assert.True(basePage.Open3dImageButton.Displayed, "Open 3D image button is not displayed");
 
             basePage.Open3dImageButton.Click();
 

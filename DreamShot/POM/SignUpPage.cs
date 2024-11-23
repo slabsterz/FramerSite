@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace DreamShot.POM
         public SignUpPage(IWebDriver driver) : base(driver)
         {            
         }
+
+        public IWebElement SignUpForm => wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@data-projection-id='40']")));
 
         public override bool IsPageOpened()
         {

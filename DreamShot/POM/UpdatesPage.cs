@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace DreamShot.POM
         public UpdatesPage(IWebDriver driver) : base(driver)
         {            
         }
+
+        public IWebElement UpdatesHeader => wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h1//span[text()='Updates']")));
 
         public override bool IsPageOpened()
         {

@@ -32,7 +32,7 @@ namespace DreamShot.Tests.MobileTests
             mobileDriver.Dispose();
         }
 
-        [Test]
+        [Test, Order(24)]
         public void TestMobileViewIphone()
         {
             IWebElement getAppButton = mobileDriver.FindElement(By.XPath("//div[@class='framer-1r7r56c-container']//span"));

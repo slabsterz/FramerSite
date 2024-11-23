@@ -17,7 +17,7 @@ namespace DreamShot.NavigationTests
         }
 
         [Test, Order(2)]
-        public void Navigation_NavBarIsDisplayed_WhenPageOpened()
+        public void Navigation_NavBarIsDisplayed_WhenBaseHomeOpened()
         {
             Assert.True(basePage.AreElementsPresent(), "Navigation Bar is not displayed on base page");
         }
@@ -36,22 +36,24 @@ namespace DreamShot.NavigationTests
             Assert.True(componentsPage.IsPageOpened(), "Components page is not opened");
         }
 
-        [Test, Order(5)]
+        [Test, Order(11)]
         public void Navigation_UserNavigatedTo_PricingPage()
         {
             pricingPage.NavigateTo();
             Assert.True(pricingPage.IsPageOpened(), "Pricing page is not opened");
         }
 
-        [Test, Order(6)]
+        [Test, Order(17)]
         public void Navigation_UserNavigatedTo_UpdatesPage()
         {
+            updatesPage.NavigateTo();
             Assert.True(updatesPage.IsPageOpened(), "Updates page is not opened");
         }
 
-        [Test, Order(7)]
+        [Test, Order(20)]
         public void Navigation_UserNavigatedTo_SignUpPage()
         {
+            signUpPage.NavigateTo();
             Assert.True(signUpPage.IsPageOpened(), "Sign Up page is not opened");
         }
     }

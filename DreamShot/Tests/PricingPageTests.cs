@@ -12,29 +12,26 @@ namespace DreamShot.NavigationTests
 {
     public class PricingPageTests : TestSetup
     {
-        [Test, Order(8)]
+        [Test, Order(12)]
         public void PricingPage_NavBarButtonsArePresent()
         {
             pricingPage.NavigateTo();
             Assert.True(pricingPage.AreElementsPresent(), "Navigation Bar buttons are not present on the page");
         }
 
-        [Test, Order(9)]
+        [Test, Order(13)]
         public void PricingPage_PlansIncludeDollarSymbol()
         {
-            pricingPage.NavigateTo();
-
             foreach(var pricingElement in pricingPage.PlanPrice)
             {
                 Assert.That(pricingElement.Text, Does.Contain("$"), "Pricing does not contain $ symbol");
             }
         }
 
-        [Test, Order(10)]
+        [Test, Order(14)]
         public void PricingPage_TotalNumberOfPlansIsCorrect()
         {
             int planCounter = 0;
-            pricingPage.NavigateTo();
 
             foreach (var pricingElement in pricingPage.Plans)
             {
@@ -44,22 +41,20 @@ namespace DreamShot.NavigationTests
             Assert.That(planCounter, Is.EqualTo(3), "The total payment plans are not 3");
         }
 
-        [Test, Order(11)]
+        [Test, Order(15)]
         public void PricingPage_FaqSectionIsVisible()
         {
-            pricingPage.NavigateTo();
             actions.MoveToElement(pricingPage.FaqSection).Perform();
 
-            Assert.True(pricingPage.FaqSection.Displayed);
+            Assert.True(pricingPage.FaqSection.Displayed, "FAQ section is not displayed");
         }
 
-        [Test, Order(12)]
+        [Test, Order(16)]
         public void PricingPage_FaqSection_DoesContainFourQuestions()
-        {
-            pricingPage.NavigateTo();
+        {            
             actions.MoveToElement(pricingPage.FaqSection).Perform();
 
-            Assert.That(pricingPage.Questions.Count, Is.EqualTo(4));
+            Assert.That(pricingPage.Questions.Count, Is.EqualTo(4), "Questions in FAQ are not 4");
             
         }
     }

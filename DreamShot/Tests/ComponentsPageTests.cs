@@ -22,17 +22,14 @@ namespace DreamShot.NavigationTests
         [Test,Order(9)]
         public void ComponentsPage_CustomizationContainerIsDisplayed()
         {
-            componentsPage.NavigateTo();
             actions.MoveToElement(componentsPage.CustomizeContainer).Perform();
 
-            Assert.True(componentsPage.CustomizeContainer.Displayed);
+            Assert.True(componentsPage.CustomizeContainer.Displayed, "Customization cards are not displayed");
         }
 
         [Test,Order(10)]
         public void ComponentsPage_CustomizationCardsContain_VisitButton()
         {
-            driver.Navigate().GoToUrl("https://mind-wend-913065.framer.app/components");
-
             actions.MoveToElement(componentsPage.CustomizationMessage).Perform();            
 
             foreach(var card in componentsPage.Cards)
