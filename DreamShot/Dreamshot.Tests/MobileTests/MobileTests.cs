@@ -41,7 +41,7 @@ namespace DreamShot.Tests.MobileTests
             int getAppButtonY = getAppButton.Location.Y;
             int watchVideoButtonY = watchVideoButton.Location.Y;
 
-            Assert.Less(watchVideoButtonY, getAppButtonY);
+            Assert.Less(watchVideoButtonY, getAppButtonY, "Button placement is not one above the other");
         }
     }
 }

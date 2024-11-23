@@ -40,7 +40,7 @@ namespace DreamShot.NavigationTests
 
             foreach(var card in componentsPage.Cards)
             {
-                Assert.That(card.Text.ToLower(), Does.Contain("visit"));
+                Assert.That(card.Text.ToLower(), Does.Contain("visit"), "Cards do not contain the word visit");
             }
         }
 
@@ -52,7 +52,7 @@ namespace DreamShot.NavigationTests
             actions.MoveToElement(componentsPage.SignUpBottomButton).Perform();
             string backgroundColor = componentsPage.SignUpBottomButton.GetCssValue("background-color");
 
-            Assert.That(colorRgb, Is.EqualTo(backgroundColor));
+            Assert.That(colorRgb, Is.EqualTo(backgroundColor), "Button color is not red as expected");
 
         }
     }
