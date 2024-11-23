@@ -8,10 +8,17 @@ namespace DreamShot.NavigationTests
 {
     public class UpdatesPageTests : TestSetup
     {
+
+        [Test, Order(17)]
+        public void Navigation_UserNavigatedTo_UpdatesPage()
+        {
+            updatesPage.NavigateTo();
+            Assert.True(updatesPage.IsPageOpened(), "Updates page is not opened");
+        }
+
         [Test, Order(18)]
         public void UpdatesPage_NavBarButtonsArePresent()
         {
-            updatesPage.NavigateTo();
             Assert.True(updatesPage.AreElementsPresent(), "Navigation Bar buttons are not present on the page");
         }
 

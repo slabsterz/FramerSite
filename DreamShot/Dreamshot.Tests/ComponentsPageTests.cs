@@ -11,11 +11,17 @@ namespace DreamShot.NavigationTests
 {
     public class ComponentsPageTests : TestSetup
     {
-       
+
+        [Test, Order(3)]
+        public void Navigation_UserNavigatedTo_ComponentsPage()
+        {
+            componentsPage.NavigateTo();
+            Assert.True(componentsPage.IsPageOpened(), "Components page is not opened");
+        }
+
         [Test,Order(8)]
         public void ComponentsPage_NavBarButtonsArePresent()
         {
-            componentsPage.NavigateTo();
             Assert.True(componentsPage.AreElementsPresent(), "Navigation Bar buttons are not present on the page");
         }
 

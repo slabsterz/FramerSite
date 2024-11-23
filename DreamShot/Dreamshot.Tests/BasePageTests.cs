@@ -11,6 +11,27 @@ namespace DreamShot.NavigationTests
 {
     public class BasePageTests : TestSetup
     {
+
+        [Test, Order(1)]
+        public void Navigation_UserNavigatedToBasePage_WhenWebSiteIsOpened()
+        {
+            string expectedUrl = "https://mind-wend-913065.framer.app/";
+
+            Assert.That(driver.Url, Is.EqualTo(expectedUrl), "Base page not opened");
+        }
+
+        [Test, Order(2)]
+        public void Navigation_NavBarIsDisplayed_WhenHomePageOpened()
+        {
+            Assert.True(basePage.AreElementsPresent(), "Navigation Bar is not displayed on base page");
+        }
+
+        [Test, Order(4)]
+        public void Navigation_UserNavigatedTo_HomePage()
+        {
+            Assert.True(basePage.IsPageOpened(), "Home page is not opened");
+        }
+
         [Test, Order(5)]
         public void BasePage_NavBarElementsArePresent()
         {

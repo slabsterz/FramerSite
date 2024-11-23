@@ -12,10 +12,17 @@ namespace DreamShot.NavigationTests
 {
     public class PricingPageTests : TestSetup
     {
+
+        [Test, Order(11)]
+        public void Navigation_UserNavigatedTo_PricingPage()
+        {
+            pricingPage.NavigateTo();
+            Assert.True(pricingPage.IsPageOpened(), "Pricing page is not opened");
+        }
+
         [Test, Order(12)]
         public void PricingPage_NavBarButtonsArePresent()
         {
-            pricingPage.NavigateTo();
             Assert.True(pricingPage.AreElementsPresent(), "Navigation Bar buttons are not present on the page");
         }
 
