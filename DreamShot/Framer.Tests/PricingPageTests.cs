@@ -14,7 +14,7 @@ namespace DreamShot.NavigationTests
     {
 
         [Test, Order(11)]
-        public void Navigation_UserNavigatedTo_PricingPage()
+        public void PricingPage_Navigation_UserNavigatedTo_PricingPage()
         {
             pricingPage.NavigateTo();
             Assert.True(pricingPage.IsPageOpened(), "Pricing page is not opened");

@@ -10,7 +10,7 @@ namespace DreamShot.NavigationTests
     {
 
         [Test, Order(20)]
-        public void Navigation_UserNavigatedTo_SignUpPage()
+        public void SignUpPage_Navigation_UserNavigatedTo_SignUpPage()
         {
             signUpPage.NavigateTo();
             Assert.True(signUpPage.IsPageOpened(), "Sign Up page is not opened");

@@ -10,7 +10,7 @@ namespace DreamShot.NavigationTests
     {
 
         [Test, Order(17)]
-        public void Navigation_UserNavigatedTo_UpdatesPage()
+        public void UpdatesPage_Navigation_UserNavigatedTo_UpdatesPage()
         {
             updatesPage.NavigateTo();
             Assert.True(updatesPage.IsPageOpened(), "Updates page is not opened");

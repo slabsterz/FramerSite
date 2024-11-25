@@ -13,7 +13,7 @@ namespace DreamShot.NavigationTests
     {
 
         [Test, Order(1)]
-        public void Navigation_UserNavigatedToBasePage_WhenWebSiteIsOpened()
+        public void BasePage_Navigation_UserNavigatedToBasePage_WhenWebSiteIsOpened()
         {
             string expectedUrl = "https://mind-wend-913065.framer.app/";
 
@@ -21,13 +21,13 @@ namespace DreamShot.NavigationTests
         }
 
         [Test, Order(2)]
-        public void Navigation_NavBarIsDisplayed_WhenHomePageOpened()
+        public void BasePage_Navigation_NavBarIsDisplayed_WhenHomePageOpened()
         {
             Assert.True(basePage.AreElementsPresent(), "Navigation Bar is not displayed on base page");
         }
 
         [Test, Order(4)]
-        public void Navigation_UserNavigatedTo_HomePage()
+        public void Base_Page_Navigation_UserNavigatedTo_HomePage()
         {
             Assert.True(basePage.IsPageOpened(), "Home page is not opened");
         }

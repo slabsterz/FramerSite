@@ -13,7 +13,7 @@ namespace DreamShot.NavigationTests
     {
 
         [Test, Order(3)]
-        public void Navigation_UserNavigatedTo_ComponentsPage()
+        public void ComponentsPage_Navigation_UserNavigatedTo_ComponentsPage()
         {
             componentsPage.NavigateTo();
             Assert.True(componentsPage.IsPageOpened(), "Components page is not opened");
